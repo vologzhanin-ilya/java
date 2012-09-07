@@ -14,19 +14,19 @@ public class Passenger implements Runnable {
 	}
 	@Override
 	public void run() { 
-		System.out.println("\n Passenger ARRIVE! [" + Thread.currentThread().getName() + "]");
+		System.out.println(Thread.currentThread().getName() + ": Passenger ARRIVE!" );
 		try {
 			while(tourniquet.arrivePassanger() == false);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		System.out.println("\n Passenger WENT through the tourniquet [" + Thread.currentThread().getName() + "]");
+		System.out.println(Thread.currentThread().getName() + ": Passenger WENT through the tourniquet");
 		try {
 			while(tourniquet.outPassanger() == false);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		System.out.println("\n Passenger OUT through the tourniquet [" + Thread.currentThread().getName() + "]");
+		System.out.println(Thread.currentThread().getName() + ": Passenger OUT through the tourniquet");
 		}
 }
 	
